@@ -1,0 +1,22 @@
+/* components/search/index.wxss */
+.search {
+  height: 80rpx;
+  background: #eb4450;
+  padding: 20rpx 15rpx 0;
+}
+
+.search_input {
+  position: relative;
+  height: 60rpx;
+  background: #fff;
+  font-size: 26rpx;
+  border-radius: 6rpx;
+}
+
+.icon_search {
+  font-size: 26rpx;
+  position: absolute;
+  left: 326rpx;
+  top: 30rpx;
+  color: #bbb;
+}
