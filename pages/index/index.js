@@ -1,33 +1,43 @@
 //index.js
 import request from "../../utils/request.js"
 Page({
-  //页面加载触发
-   onLoad(){
-     //测试接口
-     request({
-       url:"/api/public/v1/home/swiperdata"
-     }).then(res=>{
-       
-       this.setData({
-         result:res.data
-       })
-     })
-     console.log(this.data)
-   },
-  onShareAppMessage() {
-    return {
-      title: 'swiper',
-      path: 'page/component/pages/swiper/swiper'
-    }
-  },
-
   data: {
-    background: ['demo-text-1', 'demo-text-2', 'demo-text-3'],
+    //轮播图
+    banner: [],
     indicatorDots: true,
-    vertical: false,
     autoplay: true,
     interval: 2000,
     duration: 500,
-    result:{}
+    //导航菜单
+    navmenu: [],
+    //楼层数据
+    floor:[]
   },
+  //页面加载触发
+  onLoad() {
+    //请求轮播图数据
+    request({
+      url: "/api/public/v1/home/swiperdata"
+    }).then(res => {
+      this.setData({
+        banner: res.data.message
+      })
+    })
+    //请求菜单数据
+    request({
+      url: '/api/public/v1/home/catitems'
+    }).then(res => {
+      this.setData({
+        navmenu: res.data.message
+      })
+    })
+    //请求楼层
+    request({
+      url:'/api/public/v1/home/floordata'
+    }).then(res=>{
+      this.setData({
+        floor: res.data.message
+      })
+    })
+  }
 })

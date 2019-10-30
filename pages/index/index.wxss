@@ -1,20 +1,44 @@
 /**index.wxss**/
-.search{
-  
+
+.search {
   height: 80rpx;
   background: #eb4450;
-  padding:20rpx 15rpx 0;
+  padding: 20rpx 15rpx 0;
 }
-.search_input{
+
+.search_input {
   position: relative;
   height: 60rpx;
   background: #fff;
   font-size: 26rpx;
+  border-radius: 6rpx;
 }
-.icon_search{
+
+.icon_search {
   font-size: 26rpx;
   position: absolute;
   left: 326rpx;
-  top: 36rpx;
-  color: #bbbbbb;
+  top: 30rpx;
+  color: #bbb;
+}
+
+.menu {
+  display: flex;
+  margin: 25rpx 0;
+  justify-content: space-around;
+}
+
+.product_list {
+  display: flex;
+  margin: 20rpx 20rpx 40rpx 20rpx;
+  justify-content:space-around;
+  
+}
+
+.right {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+  justify-content:space-around;
+  align-content:space-between;
 }

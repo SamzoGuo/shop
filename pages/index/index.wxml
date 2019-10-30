@@ -6,18 +6,30 @@
   </view>
 </view>
 <!-- 轮播图 -->
-<view class="container">
-  <view class="page-body">
-    <view class="page-section page-section-spacing swiper">
-      <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-        <block wx:for="{{background}}" wx:key="*this">
-          <swiper-item>
-            <view class="swiper-item {{item}}">
-            1
-            </view>
-          </swiper-item>
-        </block>
-      </swiper>
+<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{banner}}" wx:key="{{index}}">
+    <swiper-item>
+
+      <image src="{{item.image_src}}" mode="aspectFill" style="width:100%;height:100%"></image>
+
+    </swiper-item>
+  </block>
+</swiper>
+<!-- 菜单 -->
+<view class="menu">
+  <navigator url="" wx:for="{{navmenu}}" wx:key="{{index}}">
+    <image src="{{item.image_src}}" style="width:100rpx;height:137rpx" mode="aspectFill"></image>
+  </navigator>
+</view>
+<!-- 楼层 -->
+<view class="floor" wx:for="{{floor}}" wx:key="{{index}}">
+  <image src="{{item.floor_title.image_src}}" style="height:90rpx;width:100%"></image>
+  <view class="product_list">
+    <image src="{{item.product_list[0].image_src}}" style="width:230rpx;height:370rpx;margin-right:5rpx"></image>
+    <view class="right">
+      <navigator url="item.navigator_url" wx:for="{{item.product_list}}" wx:key="{{index}}" wx:if="{{index>0}}">
+        <image src="{{item.image_src}}" style="width:230rpx;height:180rpx;box-sizing:border-box"></image>
+      </navigator>
     </view>
   </view>
 </view>
