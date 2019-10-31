@@ -24,8 +24,12 @@ Page({
         pagesize: 10
       }
     }).then(res => {
+      const newGoods = res.data.message.goods.map(v=>{
+        v.goods_price = Number(v.goods_price).toFixed(2)
+        return v
+      })
       //在原数组后添加数据
-      const newGoods = [...this.data.goods, ...res.data.message.goods]
+    
       //最后请求的数据小于条时，把isShow改为false
       if (res.data.message.goods.length < 10) {
         this.setData({
@@ -33,11 +37,10 @@ Page({
         })
       }
       this.setData({
-        goods: newGoods,
+        goods: [...this.data.goods, ...newGoods],
         //请求完后把hasLoad改为false
         hasLoad: false
       })
-      console.log(this.data.goods)
     })
   },
 
