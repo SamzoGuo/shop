@@ -1,34 +1,18 @@
-// pages/category/index.js
-import request from '../../utils/request.js'
+// pages/goods_list/index.js
 Page({
+
   /**
    * 页面的初始数据
    */
   data: {
-    //tab栏当前选中那项
-    current:0,
-    //请求品牌数据
-    product:[]
-  },
 
-  handleclick(event){
-    this.setData({
-      current: event.target.dataset.index
-    })
-    console.log(this.data.current)
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    request({
-      url:'/api/public/v1/categories'
-    }).then(res=>{
-      this.setData({
-        product:res.data.message
-      })
-    })
+      console.log(options)
   },
 
   /**

@@ -1,1 +1,62 @@
 /* pages/category/index.wxss */
+
+.container {
+  display: flex;
+  position: fixed;
+  top: 100rpx;
+  bottom: 0;
+  justify-content: space-between;
+}
+
+.list {
+  background: #f4f4f4;
+  width: 200rpx;
+  overflow-y: auto;
+}
+
+.pro-item {
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 28rpx;
+  border-bottom: 2rpx solid #d5dad8
+}
+
+.active {
+  position: relative;
+  background: #fff;
+  color: #eb4450;
+}
+
+.active::before {
+  position: absolute;
+  content: '';
+  display: block;
+  width: 4px;
+  top: 10rpx;
+  height: 80rpx;
+  background: #eb4450;
+}
+
+.right {
+  flex: 1;
+  overflow-y: auto;
+  width: 100%;
+}
+
+.title {
+  margin: 40rpx 0rpx 40rpx 205rpx;
+}
+
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.picture {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  width: 33.33%;
+}
