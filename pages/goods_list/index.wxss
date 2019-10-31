@@ -1,7 +1,8 @@
 /* pages/goods_list/index.wxss */
+
 .search {
   height: 80rpx;
-  background: #eeeeee;
+  background: #eee;
   padding: 20rpx 15rpx 0;
 }
 
@@ -16,31 +17,31 @@
 .icon_search {
   font-size: 26rpx;
   position: absolute;
-  left:30rpx;
+  left: 30rpx;
   top: 30rpx;
   color: #bbb;
 }
 
-.titel{
-  display:flex;
+.titel {
+  display: flex;
   height: 100rpx;
   line-height: 100rpx;
   justify-content: space-around;
-  border-bottom: 2px solid #eeeeee;
+  border-bottom: 2px solid #eee;
 }
 
-.content{
+.content {
   display: flex;
   justify-content: space-between;
-  height:200rpx;
-  padding:25rpx 30rpx 25rpx 0 ; 
+  height: 200rpx;
+  padding: 25rpx 30rpx 25rpx 0;
   margin-left: 20rpx;
-  border-bottom: 2px solid #eeeeee;
+  border-bottom: 2px solid #eee;
 }
 
-.right{
+.right {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  flex:1;
+  flex: 1;
 }

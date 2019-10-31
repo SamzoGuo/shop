@@ -11,10 +11,13 @@
   <view>价格</view>
 </view>
 <view class="content" wx:for="{{goods}}" wx:key="{{index}}">
- <image src="{{item.goods_small_logo}}" style="width:200rpx;height:200rpx;margin-right:20rpx"></image>
- <view class="right">
-  <text style="display: -webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;text-overflow:ellipsis;overflow: hidden;font-size:35rpx">{{item.goods_name}}</text>
-  <view style="color:#eb4450;"><text style="font-size:30rpx">￥</text>{{item.goods_price}}</view>
- </view>
+  <image src="{{item.goods_small_logo}}" style="width:200rpx;height:200rpx;margin-right:20rpx"></image>
+  <view class="right">
+    <text style="display: -webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;text-overflow:ellipsis;overflow: hidden;font-size:35rpx">{{item.goods_name}}</text>
+    <view style="color:#eb4450;">
+      <text style="font-size:30rpx">￥</text>{{item.goods_price}}</view>
+  </view>
 </view>
 
+<view style="text-align:center;color:#787878" wx:if="{{isShow}}">正在加载中...</view>
+<view style="text-align:center;color:#787878" wx:if="{{!isShow}}">没有更多了</view>

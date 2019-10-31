@@ -1,86 +1,69 @@
 // pages/goods_list/index.js
 import request from '../../utils/request.js'
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
     //参数
-    query:'',
+    query: '',
     //商品列表
-    goods:{}
+    goods: [],
+    //请求的页数
+    pagenum: 1,
+    //是否显示隐藏
+    isShow: true,
+    //是否正在加载
+    hasLoad: false
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-    //获取参数
-    const {query}=options
-    this.setData({
-      query
-    })
-    //获取商品列表
+  //封装获取商品数据
+  getlist() {
     request({
-      url:'/api/public/v1/goods/search',
-      data:{
-        query:this.data.query
+      url: '/api/public/v1/goods/search',
+      data: {
+        query: this.data.query,
+        pagenum: this.data.pagenum,
+        pagesize: 10
       }
-    }).then(res=>{
+    }).then(res => {
+      //在原数组后添加数据
+      const newGoods = [...this.data.goods, ...res.data.message.goods]
+      //最后请求的数据小于条时，把isShow改为false
+      if (res.data.message.goods.length < 10) {
+        this.setData({
+          isShow: false
+        })
+      }
       this.setData({
-        goods:res.data.message.goods
+        goods: newGoods,
+        //请求完后把hasLoad改为false
+        hasLoad: false
       })
       console.log(this.data.goods)
     })
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  //  生命周期函数--监听页面加
+  onLoad: function(options) {
+    //获取参数
+    const {
+      query
+    } = options
+    this.setData({
+      query
+    })
+    //调用getlist方法获取商品列表
+    this.getlist()
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  // 页面上拉触底事件的处理函数
+  onReachBottom: function() {
+    this.setData({
+      pagenum: this.data.pagenum + 1
+    })
+    if (!this.data.hasLoad) {
+      this.getlist()
+      this.setData({
+        hasLoad: true
+      })
+    }
   }
 })
