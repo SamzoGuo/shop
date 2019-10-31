@@ -11,7 +11,7 @@
   <view>价格</view>
 </view>
 <view class="content" wx:for="{{goods}}" wx:key="{{index}}">
-  <image src="{{item.goods_small_logo}}" style="width:200rpx;height:200rpx;margin-right:20rpx"></image>
+ <navigator url="../goods_detail/index?goods_id={{item.goods_id}}"> <image src="{{item.goods_small_logo}}" style="width:200rpx;height:200rpx;margin-right:20rpx"></image></navigator>
   <view class="right">
     <text style="display: -webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;text-overflow:ellipsis;overflow: hidden;font-size:35rpx">{{item.goods_name}}</text>
     <view style="color:#eb4450;">
