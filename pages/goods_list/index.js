@@ -41,7 +41,6 @@ Page({
         //请求完后把hasLoad改为false
         hasLoad: false
       })
-      console.log(this.data.goods)
     })
   },
 
