@@ -1,6 +1,8 @@
 <!--pages/category/index.wxml-->
 <!-- 引入搜索组件 -->
-<search/>
+<navigator url="/pages/search/index">
+  <search/>
+</navigator>
 <view class="container">
   <view class="list">
     <view class="pro-item {{current===index?'active':''}}" wx:for="{{product}}" wx:key="{{index}}" bindtap="handleclick" data-index="{{index}}">{{item.cat_name}}</view>
@@ -15,9 +17,11 @@
       <view class="product-list">
         <view class="picture" wx:for="{{item.children}}" wx:key="{{index}}">
           <navigator url="../goods_list/index?query={{item.cat_name}}">
-            <image src="{{item.cat_icon}}" style="width:120rpx;height:120rpx">
-            </image>
-            <view style="font-size:24rpx">{{item.cat_name}}</view>
+            <view style="display:flex;flex-direction: column; align-items: center;">
+              <image src="{{item.cat_icon}}" style="width:120rpx;height:120rpx">
+              </image>
+              <view style="font-size:24rpx">{{item.cat_name}}</view>
+            </view>
           </navigator>
         </view>
       </view>

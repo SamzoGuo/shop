@@ -1,7 +1,8 @@
 <!--components/search/index.wxml-->
 <view class="search">
-  <input class="search_input "></input>
+  <view class="search_input "></view>
   <view class="icon_search">
+    <icon type="search" size="14"></icon>
     <text class="iconfont iconsearch" style="margin-right:16rpx"></text>搜索
   </view>
 </view>

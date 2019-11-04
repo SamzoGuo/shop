@@ -19,7 +19,7 @@
   line-height: 100rpx;
   text-align: center;
   font-size: 28rpx;
-  border-bottom: 2rpx solid #d5dad8
+  border-bottom: 2rpx solid #d5dad8;
 }
 
 .active {
@@ -56,7 +56,5 @@
 .picture {
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
-  align-items: center;
   width: 33.33%;
 }

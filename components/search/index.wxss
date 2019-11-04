@@ -18,5 +18,5 @@
   position: absolute;
   left: 326rpx;
   top: 30rpx;
-  color: #bbb;
+  color: #bbb
 }

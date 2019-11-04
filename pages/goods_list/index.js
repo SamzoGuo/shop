@@ -68,5 +68,28 @@ Page({
         hasLoad: true
       })
     }
+  },
+
+  //按下回车键触发
+  bindconfirm(event) {
+    const {
+      value
+    } = event.detail
+    //保存到搜索历史为本地数据
+    const arr=wx.getStorageSync('search')||[]
+    const arr1=arr.filter(v=>{
+      return v!==value
+    })
+    arr1.unshift(value)
+    wx.setStorageSync('search', arr1)
+    console.log(arr1)
+    this.setData({
+      query: value
+    })
+    this.setData({
+      goods: [],
+      pagenum: 1
+    })
+    this.getlist()
   }
 })

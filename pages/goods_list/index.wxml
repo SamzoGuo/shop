@@ -1,8 +1,8 @@
 <!--pages/goods_list/index.wxml-->
 <view class="search">
-  <input class="search_input "></input>
+  <input class="search_input" value="{{query}}" bindconfirm="bindconfirm"></input>
   <view class="icon_search">
-    <text class="iconfont iconsearch" style="margin-right:16rpx"></text>{{query}}
+    <icon type="search" size="16"></icon>
   </view>
 </view>
 <view class="titel">

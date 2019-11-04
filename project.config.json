@@ -14,7 +14,7 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.9.0",
-	"appid": "wx8a04303d0212876c",
+	"appid": "wxfb52f2d7b2f6123a",
 	"projectname": "%E9%BB%91%E9%A9%AC%E5%95%86%E5%9F%8E",
 	"debugOptions": {
 		"hidedInDevtools": []
@@ -79,6 +79,20 @@
 					"name": "pages/goods_detail/index",
 					"pathName": "pages/goods_detail/index",
 					"query": "goods_id=57219",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/search/index",
+					"pathName": "pages/search/index",
+					"query": "goods_id=57219",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/search/index",
+					"pathName": "pages/search/index",
+					"query": "",
 					"scene": null
 				}
 			]

@@ -1,6 +1,8 @@
 <!--index.wxml-->
 <!-- 引入搜索组件 -->
-<search/>
+<navigator url="/pages/search/index">
+  <search/>
+</navigator>
 <!-- 轮播图 -->
 <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
   <block wx:for="{{banner}}" wx:key="{{index}}">
